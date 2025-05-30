@@ -7,13 +7,13 @@
 Se crea un puntero hacia el siguiente nodo.
 **/
 
-typedef struct Nodo1 {
+typedef struct Nodo {
     int dato;
-    struct Nodo1* siguiente;
-} Nodo1;
+    struct Nodo* siguiente;
+} Nodo;
 
-Nodo1* crearNodo(int dato) {
-    Nodo1* nuevoNodo2 = (Nodo1*)malloc(sizeof(Nodo1));
+Nodo* crearNodo(int dato) {
+    Nodo* nuevoNodo2 = (Nodo*)malloc(sizeof(Nodo));
     if (nuevoNodo2 == NULL) {
         printf("Error al asignar memoria.\n");
         exit(1);
@@ -21,4 +21,10 @@ Nodo1* crearNodo(int dato) {
     nuevoNodo2->dato = dato;
     nuevoNodo2->siguiente = NULL;
     return nuevoNodo2;
+}
+
+void insertarAlInicio(Nodo** cabeza, int dato) {
+    Nodo* nuevoNodo2 = crearNodo(dato);
+    nuevoNodo2->siguiente = *cabeza;
+    *cabeza = nuevoNodo2;
 }
