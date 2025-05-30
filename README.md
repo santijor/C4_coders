@@ -5,13 +5,13 @@ Implementar una estructura de datos de lista enlazada simple utilizando lenguaje
 
 Requisitos:
 
-Definir una estructura Nodo que contenga:
+1) Definir una estructura Nodo que contenga:
 
-Un campo int dato para almacenar el valor del nodo.
+-Un campo int dato para almacenar el valor del nodo.
 
-Un puntero al siguiente nodo.
+-Un puntero al siguiente nodo.
 
-Funciones obligatorias:
+2) Funciones obligatorias:
 
 Nodo* crearNodo(int dato) – Crea un nodo nuevo con un dato dado.
 
@@ -27,7 +27,7 @@ void imprimirLista(Nodo* cabeza) – Imprime todos los elementos de la lista.
 
 void liberarLista(Nodo** cabeza) – Libera toda la memoria utilizada por la lista.
 
-Programa principal:
+3) Programa principal:
 
 Implementa un menú interactivo para probar las funciones anteriores (agregar, eliminar, buscar, imprimir, salir).
 
