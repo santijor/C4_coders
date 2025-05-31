@@ -13,18 +13,25 @@ typedef struct Nodo {
 } Nodo;
 
 Nodo* crearNodo(int dato) {
-    Nodo* nuevoNodo2 = (Nodo*)malloc(sizeof(Nodo));
-    if (nuevoNodo2 == NULL) {
-        printf("Error al asignar memoria.\n");
+    Nodo* nuevoNodo1 = (Nodo*)malloc(sizeof(Nodo));
+    if (nuevoNodo1 == NULL) {
+        printf("Error al asignar memoria, el nodo es null.\n");
         exit(1);
     }
-    nuevoNodo2->dato = dato;
-    nuevoNodo2->siguiente = NULL;
-    return nuevoNodo2;
+    nuevoNodo1->dato = dato;
+    nuevoNodo1->siguiente = NULL;
+    return nuevoNodo1;
 }
 
 void insertarAlInicio(Nodo** cabeza, int dato) {
-    Nodo* nuevoNodo2 = crearNodo(dato);
-    nuevoNodo2->siguiente = *cabeza;
-    *cabeza = nuevoNodo2;
+    Nodo* nuevoNodo1 = crearNodo(dato);
+    nuevoNodo1->siguiente = *cabeza;
+    *cabeza = nuevoNodo1;
 }
+
+void insertarAlInicio(Nodo** cabeza, int dato) {
+    Nodo* nuevoNodo1 = crearNodo(dato);
+    nuevoNodo1->siguiente = *cabeza;
+    *cabeza = nuevoNodo1;
+}
+
