@@ -88,6 +88,20 @@ void imprimirLista(Nodo* cabeza) {
 }
 
 void liberarLista(Nodo** cabeza) {
-    
+
+}
+
+int menu() {
+    int opcion;
+    printf("\n MENU \n");
+    printf("1- Insertar al inicio\n");
+    printf("2- Insertar al final\n");
+    printf("3- Eliminar un nodo\n");
+    printf("4- Buscar un nodo\n");
+    printf("5- Imprimir lista\n");
+    printf("6- Salir\n");
+    printf("Elige una opcion:");
+    scanf("%d", &opcion);
+    return opcion;
 }
 
