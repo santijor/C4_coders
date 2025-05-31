@@ -57,6 +57,8 @@ void insertarAlFinal(Nodo** cabeza, int dato) {
     actual->siguiente = nuevoNodo;
 }
 
+
+
 void eliminarNodo(Nodo** cabeza, int dato) {
     Nodo* actual = *cabeza;
     Nodo* anterior = NULL;
@@ -77,4 +79,15 @@ void eliminarNodo(Nodo** cabeza, int dato) {
     printf("Nodo con dato %d eliminado.\n", dato);
 }
 
+Nodo* buscarNodo(Nodo* cabeza, int dato) {
+
+}
+
+void imprimirLista(Nodo* cabeza) {
+
+}
+
+void liberarLista(Nodo** cabeza) {
+    
+}
 
