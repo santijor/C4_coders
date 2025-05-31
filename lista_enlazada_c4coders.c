@@ -1,3 +1,4 @@
+#include "lista.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -6,11 +7,6 @@
 /**Estructura del nodo. La variable dato de tipo int almacena el valor del nodo.
 Se crea un puntero hacia el siguiente nodo.
 **/
-
-typedef struct Nodo {
-    int dato;
-    struct Nodo* siguiente;
-} Nodo;
 
 Nodo* crearNodo(int dato) {
     Nodo* nuevoNodo1 = (Nodo*)malloc(sizeof(Nodo));
@@ -29,9 +25,19 @@ void insertarAlInicio(Nodo** cabeza, int dato) {
     *cabeza = nuevoNodo1;
 }
 
-void insertarAlInicio(Nodo** cabeza, int dato) {
-    Nodo* nuevoNodo1 = crearNodo(dato);
-    nuevoNodo1->siguiente = *cabeza;
-    *cabeza = nuevoNodo1;
+void insertarAlFinal(Nodo** cabeza, int dato) {
+  Nodo* nuevoNodo1 = crearNodo(dato);
+  Nodo* nodoFinal = obtenerNodoFinal(cabeza);
+  nodoFinal->siguiente = nuevoNodo1;
 }
+
+Nodo *obtenerNodoFinal(Nodo** cabeza) {
+  Nodo *cursor = *cabeza;
+  while (*cursor->siguiente != NULL) {
+    cursor = *cursor->siguiente;
+  }
+  return cursor;
+}
+
+
 
