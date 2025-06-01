@@ -25,19 +25,26 @@ void insertarAlInicio(Nodo** cabeza, int dato) {
     *cabeza = nuevoNodo1;
 }
 
-void insertarAlFinal(Nodo** cabeza, int dato) {
-  Nodo* nuevoNodo1 = crearNodo(dato);
-  Nodo* nodoFinal = obtenerNodoFinal(cabeza);
-  nodoFinal->siguiente = nuevoNodo1;
+void imprimirNodo(Nodo* cabeza) {
+    if (cabeza == NULL) {
+        printf("Lista vacia\n");
+    }
+    printf("Dato: %d\n", cabeza->data);
 }
 
 Nodo *obtenerNodoFinal(Nodo** cabeza) {
-  Nodo *cursor = *cabeza;
-  while (*cursor->siguiente != NULL) {
-    cursor = *cursor->siguiente;
-  }
-  return cursor;
+    Nodo *cursor = *cabeza;
+    while (cursor->siguiente != NULL) {
+        cursor = cursor->siguiente;
+    }
+    return cursor;
 }
+void insertarAlFinal(Nodo** cabeza, int dato) {
+    Nodo* nuevoNodo1 = crearNodo(dato);
+    Nodo* nodoFinal = obtenerNodoFinal(cabeza);
+    nodoFinal->siguiente = nuevoNodo1;
+}
+
 
 
 
