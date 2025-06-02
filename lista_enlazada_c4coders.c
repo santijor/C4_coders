@@ -79,6 +79,10 @@ void eliminarNodo(Nodo** cabeza, int dato) {
     printf("Nodo con dato %d eliminado.\n", dato);
 }
 
+/**
+Busca el primer nodo que contenga un dato. Si el nodo cabeza contiene el dato, devuelve el nodo con el dato. Sino, recorre el siguiente nodo.
+*/
+
 Nodo* buscarNodo(Nodo* cabeza, int dato) {
     while(cabeza* != NULL) {
         if(cabeza->dato = dato) {
