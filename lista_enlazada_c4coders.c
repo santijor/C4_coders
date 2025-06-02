@@ -91,8 +91,17 @@ Nodo* buscarNodo(Nodo* cabeza, int dato) {
     }
 }
 
-void imprimirLista(Nodo* cabeza) {
+/**
+Imprime la lista de nodos. Si no hay ningún nodo en la lista, devuelve NULL.
+*/
 
+void imprimirLista(Nodo* cabeza) {
+    printf("Lista: ");
+    while (cabeza != NULL) {
+        printf("%d -> ", cabeza->dato);
+        cabeza = cabeza->siguiente;
+    }
+    printf("NULL\n");
 }
 
 void liberarLista(Nodo** cabeza) {
