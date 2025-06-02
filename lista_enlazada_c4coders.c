@@ -80,7 +80,11 @@ void eliminarNodo(Nodo** cabeza, int dato) {
 }
 
 Nodo* buscarNodo(Nodo* cabeza, int dato) {
-
+    while(cabeza* != NULL) {
+        if(cabeza->dato = dato) {
+            return cabeza;
+        cabeza = cabeza->siguiente
+    }
 }
 
 void imprimirLista(Nodo* cabeza) {
