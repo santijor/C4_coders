@@ -9,7 +9,7 @@ Se crea un puntero hacia el siguiente nodo.
 **/
 
 Nodo* crearNodo(int dato) {
-    Nodo* nuevoNodo1 = (Nodo*)malloc(sizeof(Nodo));
+    Nodo* nuevoNodo1 = malloc(sizeof(Nodo));
     if (nuevoNodo1 == NULL) {
         printf("Error al asignar memoria, el nodo es null.\n");
         exit(1);
@@ -21,30 +21,109 @@ Nodo* crearNodo(int dato) {
 
 void insertarAlInicio(Nodo** cabeza, int dato) {
     Nodo* nuevoNodo1 = crearNodo(dato);
-    nuevoNodo1->siguiente = *cabeza;
-    *cabeza = nuevoNodo1;
+    Nodo* nodoCabeza;
+    if (cabeza == NULL) {
+        *cabeza = nuevoNodo1;
+    }else {
+        nodoCabeza = *cabeza;
+        *cabeza = nuevoNodo1;
+        nuevoNodo1->siguiente = nodoCabeza;
+    }
 }
 
-void imprimirNodo(Nodo* cabeza) {
-    if (cabeza == NULL) {
+void imprimirNodo(Nodo* nodo) {
+    if (nodo == NULL) {
         printf("Lista vacia\n");
     }
-    printf("Dato: %d\n", cabeza->data);
+    printf("Dato: %d\n", nodo->dato);
 }
 
 Nodo *obtenerNodoFinal(Nodo** cabeza) {
     Nodo *cursor = *cabeza;
-    while (cursor->siguiente != NULL) {
-        cursor = cursor->siguiente;
+    if (cursor != NULL) {
+        while (cursor->siguiente != NULL) {
+            cursor = cursor->siguiente;
+        }
     }
     return cursor;
 }
 void insertarAlFinal(Nodo** cabeza, int dato) {
-    Nodo* nuevoNodo1 = crearNodo(dato);
+    Nodo* nuevoNodo = crearNodo(dato);
     Nodo* nodoFinal = obtenerNodoFinal(cabeza);
-    nodoFinal->siguiente = nuevoNodo1;
+    if (nodoFinal == NULL) {
+        *cabeza = nuevoNodo;
+    }else {
+        nodoFinal->siguiente = nuevoNodo;
+    }
 }
 
+int obtenerDato(Nodo* nodo) {
+    int dato =0;
+    if (nodo != NULL) {
+        dato =  nodo->dato;
+    }
+    return dato;
+}
 
+Nodo* obtenerNodoCabeza(Nodo** cabeza) {
+    if (cabeza != NULL) {
+        return *cabeza;
+    }
+}
 
+Nodo* buscarNodo(Nodo** cabeza, int dato) {
+    Nodo* cursor = *cabeza;
+
+    if (cursor != NULL) {
+        int encontrado = 0;
+        do {
+            if (cursor->dato == dato) {
+                encontrado = 1;
+            }else {
+                cursor = cursor->siguiente;
+            }
+        }while (!encontrado && cursor != NULL);
+    }
+    return cursor;
+}
+
+int eliminarNodo(Nodo** cabeza, int dato) {
+    int error = -1;
+    Nodo* cursor = *cabeza;
+    Nodo* antecesor = cursor;
+    while (cursor != NULL) {
+        if (cursor->dato != dato) {
+            antecesor = cursor;
+            cursor = cursor->siguiente;
+        }else {
+            if (cursor == *cabeza) {
+                printf("Es cabeza\n");
+                free(*cabeza);
+                *cabeza = NULL;
+                cabeza = NULL;
+            }else {
+                antecesor->siguiente = cursor->siguiente;
+                free(cursor);
+                cursor = NULL;
+            }
+            error = 0;
+            break;
+        }
+    }
+    return error;
+}
+
+void printList(Nodo* nodo) {
+    if (nodo != NULL) {
+        printf("Dato: %d\n", nodo->dato);
+        printList(nodo->siguiente);
+    }
+}
+void imprimirLista(Nodo** cabeza) {
+    Nodo* cursor = *cabeza;
+    printf("inicio %d\n",*cabeza);
+    if (cursor != NULL) {
+        printList(cursor);
+    }
+}
 

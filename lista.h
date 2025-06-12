@@ -1,6 +1,6 @@
 typedef struct Nodo{
-    int data;
-    struct Nodo* next;
+    int dato;
+    struct Nodo* siguiente;
 } Nodo;
 
 Nodo* crearNodo(int );
@@ -9,10 +9,19 @@ void insertarAlInicio(Nodo** , int );
 
 void insertarAlFinal(Nodo** , int );
 
-void eliminarNodo(Nodo** , int);
+int eliminarNodo(Nodo** , int);
 
-Nodo* buscarNodo(Nodo* , int );
+Nodo* buscarNodo(Nodo** , int );
 
-void imprimirLista(Nodo* );
+void imprimirLista(Nodo** );
 
-void liberarLista(Nodo** )
+void imprimirNodo(Nodo* );
+
+void liberarLista(Nodo** );
+
+Nodo* obtenerNodoFinal(Nodo** );
+
+Nodo* obtenerNodoCabeza(Nodo** );
+
+int obtenerDato(Nodo* );
+
