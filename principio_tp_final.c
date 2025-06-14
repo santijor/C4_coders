@@ -1,19 +1,25 @@
-//Estructura de los alumnos
+// Estructura que representa una materia
+typedef struct Materia {
+    int codigo;
+    char nombre[50];
+    struct Materia* siguiente; // siguiente materia en la lista
+} Materia;
+
+// Estructura que representa un estudiante
 typedef struct Estudiante {
-    int id;
+    int codigo;
     char nombre[50];
     int edad;
-    Materia* materias[10]; // hasta 10 materias por estudiante
-    int cantidadMaterias;
-    struct Estudiante* siguiente;
+    struct Estudiante* siguiente; // siguiente estudiante en la lista
 } Estudiante;
 
-typedef struct Materia {
-    int id;
-    char nombre[50];
-    int aprobo; // 0: no rendida, 1: aprobada
-    struct Materia* siguiente;
-} Materia;
+// Estructura que representa una cursada (relación estudiante-materia)
+typedef struct Cursada {
+    int codigoEstudiante;
+    int codigoMateria;
+    int rendida; // 0: no rendida, 1: rendida/aprobada
+    struct Cursada* siguiente; // siguiente cursada en la lista
+} Cursada;
 
 int main() {
     Estudiante* listaEstudiantes = NULL;
