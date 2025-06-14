@@ -1,3 +1,4 @@
+//Estructura de los alumnos
 typedef struct Estudiante {
     int id;
     char nombre[50];
