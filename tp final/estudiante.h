@@ -23,4 +23,6 @@ int buscar_estudiante_por_codigo(Estudiante *, int  *);
 
 int buscar_estudiante_por_nombre(Estudiante *, char  *);
 
+Estudiante *buscar_estudiante(Nodo **, funcion_equal , void *);
+
 void agregar_estudiante(Nodo **cabeza, int codigo, char *nombre, int edad);

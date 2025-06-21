@@ -10,6 +10,7 @@ typedef struct materia {
     int codigo;
     char nombre[50];
 }Materia;
+
 void agregar_materia(Nodo **, int , char* );
 
 int buscar_materia_por_nombre(Materia *, char  *);

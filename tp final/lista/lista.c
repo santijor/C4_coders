@@ -121,8 +121,17 @@ void printList(Nodo* nodo) {
 }
 void imprimirLista(Nodo** cabeza) {
     Nodo* cursor = *cabeza;
-    printf("inicio %d\n",*cabeza);
     if (cursor != NULL) {
         printList(cursor);
     }
+}
+
+Nodo *seleccionarNodos(Nodo** cabeza, funcion_equal igual, void *dato) {
+    Nodo* cursor = *cabeza;
+    Nodo *listado;
+    while ((cursor = buscarNodo(&cursor, igual, dato)) != NULL) {
+        insertarAlInicio(&listado, cursor->dato);
+        cursor = cursor->siguiente;
+    }
+    return listado;
 }

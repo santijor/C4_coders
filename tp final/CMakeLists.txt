@@ -12,4 +12,6 @@ add_executable(estudiantes
         materia.c
         materia.h
         cursada.c
-        cursada.h)
+        cursada.h
+        listados.c
+        listado.h)

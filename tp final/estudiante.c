@@ -31,6 +31,10 @@ int buscar_estudiante_por_nombre(Estudiante *e, char  *nombre) {
     return strcmp(e->nombre, nombre) == 0;
 }
 
+Estudiante *buscar_estudiante(Nodo **cabeza, funcion_equal equal, void *dato) {
+    return (Estudiante *) buscarNodo(cabeza, equal, dato)->dato;
+}
+
 void agregar_estudiante(Nodo **cabeza, int codigo, char *nombre, int edad) {
     insertar_estudiante_al_inicio(cabeza, crear_estudiante(codigo, nombre, edad));
 }
