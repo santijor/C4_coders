@@ -7,3 +7,5 @@
 - Puntos extra:
 1) Busqueda por árbol binario.
 2) Exportar estudiantes y sus caracteristicas con CSV.
+3) Tests unitarios.
+4) (aun no) Calculo de promedios de notas de estudiantes.
