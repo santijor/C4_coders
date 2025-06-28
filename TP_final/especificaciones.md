@@ -1,0 +1,3 @@
+- Integrantes: Gustavo Calderon, Ivan Vargas, Nicolas Gregori, Santiago Jorquera
+- Consignas implementadas:
+- Puntos extra:
