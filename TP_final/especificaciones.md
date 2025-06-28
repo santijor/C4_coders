@@ -3,6 +3,7 @@
 - Consignas implementadas:
 1) Buscar estudiantes por nombre y por rango de edad.
 2) Cada estudiante puede anotarse a una materia y rendirla.
+3) Dar de alta, modificar, eliminar y listar estudiantes y materias.
    
 - Puntos extra:
 1) Busqueda por árbol binario.
