@@ -9,3 +9,5 @@
 1) Busqueda por árbol binario.
 2) Exportar estudiantes y sus caracteristicas con CSV.
 3) Tests unitarios.
+
+- En la carpeta de test se encuentran los test unitarios, 
