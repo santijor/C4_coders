@@ -10,4 +10,4 @@
 2) Exportar estudiantes y sus caracteristicas con CSV.
 3) Tests unitarios.
 
-- En la carpeta de test se encuentran los test unitarios. En la carpeta lista se encuentra el anterior TP que realizamos, el cual nos sirvió para realizar este trabajo, mientras que en la carpeta de util se encuentra el código del árbol binario. Por ultimo, 
+- Dentro de la carpeta estudiante se encuentra todo el trabajo. En la carpeta de test se encuentran los test unitarios. En la carpeta lista se encuentra el anterior TP que realizamos, el cual nos sirvió para realizar este trabajo, mientras que en la carpeta de util se encuentra el código del árbol binario. Por ultimo, en la carpeta de ckmake-build-debug es donde se guardan las distintas caracteristicas del estudiante y/o materia en formato csv.
