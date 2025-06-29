@@ -18,8 +18,8 @@ Estudiante* crear_estudiante(int codigo, char *nombre, int edad) {
     }
     return e;
 }
-void insertar_estudiante_al_inicio(Nodo** cabeza, Estudiante* e) {
 
+void insertar_estudiante_al_inicio(Nodo** cabeza, Estudiante* e) {
     insertarAlInicio(cabeza, (Estudiante *)e);
 }
 
@@ -37,4 +37,18 @@ Estudiante *buscar_estudiante(Nodo **cabeza, funcion_equal equal, void *dato) {
 
 void agregar_estudiante(Nodo **cabeza, int codigo, char *nombre, int edad) {
     insertar_estudiante_al_inicio(cabeza, crear_estudiante(codigo, nombre, edad));
+}
+
+int modificar_estudiante(Nodo* cabeza, funcion_equal equal, void* dato, char* nuevo_nombre, int nueva_edad) {
+    while (cabeza != NULL) {
+        if (equal(cabeza->dato, dato)) {
+            Estudiante* e = (Estudiante*) cabeza->dato;
+            strncpy(e->nombre, nuevo_nombre, sizeof(e->nombre) - 1);
+            e->nombre[sizeof(e->nombre) - 1] = '\0';
+            e->edad = nueva_edad;
+            return 1;
+        }
+        cabeza = cabeza->siguiente;
+    }
+    return 0;
 }

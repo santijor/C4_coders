@@ -17,6 +17,9 @@ int buscar_materia_por_nombre(Materia *, char  *);
 
 Materia *buscar_materia(Nodo **, funcion_equal, void * );
 
+int modificar_materia(Nodo* materias, funcion_equal equal, void* dato, char* nuevo_nombre);
+int buscar_materia_por_codigo(Materia *m, int *codigo);
+
 #endif //MATERIA_H
 
 

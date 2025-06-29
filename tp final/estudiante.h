@@ -5,7 +5,7 @@
 #ifndef ESTUDIANTES_H
 #define ESTUDIANTES_H
 
-#endif //ESTUDIANTES_H
+
 
 #include "lista/lista.h"
 
@@ -26,3 +26,7 @@ int buscar_estudiante_por_nombre(Estudiante *, char  *);
 Estudiante *buscar_estudiante(Nodo **, funcion_equal , void *);
 
 void agregar_estudiante(Nodo **cabeza, int codigo, char *nombre, int edad);
+
+int modificar_estudiante(Nodo* cabeza, funcion_equal equal, void* dato, char* nuevo_nombre, int nueva_edad);
+
+#endif //ESTUDIANTES_H

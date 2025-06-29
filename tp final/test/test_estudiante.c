@@ -107,6 +107,8 @@ void test_seleccionar_nodos() {
     assert(buscar_estudiante(&listado, buscar_estudiante_por_nombre, "Mateo")->codigo ==30);
 
     printf("Test pasado!!!\n");
+
+    listar_estudiantes_ordenados()
 }
 
 int main() {

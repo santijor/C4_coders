@@ -6,7 +6,6 @@ set(CMAKE_C_STANDARD 11)
 add_executable(estudiantes
         estudiante.c
         estudiante.h
-        test/test_estudiante.c
         lista/lista.c
         lista/lista.h
         materia.c
@@ -14,4 +13,9 @@ add_executable(estudiantes
         cursada.c
         cursada.h
         listados.c
-        listado.h)
+        listado.h
+        util/abb.c
+        util/abb.h
+        main.c
+        util/exportar.c
+        util/exportar.h)
